@@ -1,0 +1,15 @@
+<form class="custom-form">
+  <div *ngFor="let campo of camposDoForm" class="form-group">
+    <label class="form-label">{{ campo.rotulo }}</label>
+    <input 
+      type="{{ campo.tipo }}" 
+      name="{{ campo.nome }}" 
+      id="{{ campo.nome }}" 
+      placeholder="{{ campo.rotulo }}"
+      [(ngModel)]="valoresDosCampos[campo.nome]"
+      class="form-control"
+    >
+  </div>
+</form>
+
+  
