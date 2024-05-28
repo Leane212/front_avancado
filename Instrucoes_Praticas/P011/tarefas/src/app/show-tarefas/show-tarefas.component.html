@@ -1,0 +1,17 @@
+<ul class="task-list">
+  <li *ngFor="let tarefa of tarefas" class="task-item">
+    <div class="task-container">
+      <div *ngIf="editandoId !== tarefa.id">
+        {{ tarefa.descricao }}
+        <button (click)="iniciarEdicao(tarefa)" class="edit-button">Editar</button>
+        <button (click)="removeTarefa(tarefa.id)" class="remove-button">Remover</button>
+      </div>
+      <div *ngIf="editandoId === tarefa.id">
+        <input [(ngModel)]="descricaoEditando" />
+        <button (click)="salvarEdicao(tarefa)" class="save-button">Salvar</button>
+        <button (click)="cancelarEdicao()" class="cancel-button">Cancelar</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
