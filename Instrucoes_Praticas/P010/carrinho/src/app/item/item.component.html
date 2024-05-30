@@ -1,0 +1,17 @@
+    <div class="card" style="width: 18rem;">
+    <img [src]="item.imgURL" class="card-img-top" alt="Foto do produto">
+    <div class="card-body">
+      <h4 class="card-title">{{ item.nome }}</h4>
+      <h6 class="card-title">{{ item.descricao }}</h6>
+      <p class="card-text">Preço: {{ item.preco | currency : "BRL" }}</p>
+      <form class="quantity-selector">
+        <label for="quantity">Quantidade</label>
+        <br/>
+        <select [(ngModel)]="item.quant" [ngModelOptions]="{ standalone: true }">
+          <option *ngFor="let i of quantities" [value]="i">{{ i }}</option>
+        </select>
+      </form><br>
+      <a href="#" class="btn btn-primary" (click)="addToCart()">Adicionar ao Carrinho</a>
+    </div>
+  </div>
+  <h6></h6>

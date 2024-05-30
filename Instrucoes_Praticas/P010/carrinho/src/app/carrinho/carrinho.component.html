@@ -1,0 +1,24 @@
+<div class="container">
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{ 'd-block': showCarrinho }">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Carrinho</h5>        
+        </div>
+        <div class="modal-body modal-content container">
+          <div class="car-list">
+            <app-carrinho-item
+              *ngFor="let item of listaDeItens"
+              [item]="item"
+              (removeFromCartEvent)="removeItem($event)"
+            ></app-carrinho-item>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <h2>Total: {{ subtotal() | currency : "BRL" }}</h2>
+          <button type="button" class="btn btn-primary" (click)="close()">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

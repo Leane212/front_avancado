@@ -1,0 +1,21 @@
+<div class=" cart-item" *ngIf="item.quant > 0">
+    <div class="row align-items-center">
+      <div class="col-md-2">
+        <img [src]="item.imgURL" alt="Imagem do produto" class="img-fluid product-image">
+      </div>
+      <div class="col-md-2">
+        <h3>{{ item.nome }}</h3>
+      </div>
+      <div class="col-md-3 text-center">
+        <p><strong>Quantidade:</strong> {{ item.quant }}</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <p><strong>Preço:</strong> {{ item.preco * item.quant | currency : "BRL" }}</p>
+      </div>
+      <div class="col-md-3 ">
+        <button class="btn btn-danger" (click)="removeItem()">Remover</button>
+      </div>
+    </div>
+</div>
+  
+  

@@ -1,0 +1,19 @@
+<div id="fundo" class="container-fluid">
+    <img src="https://www.gov.br/cbpf/pt-br/Modelo%20de%20Capa/imagens/fundo-abstrato-azul-01_1150x500.jpg/@@images/image.jpeg" alt="logo" class="img-responsive w-100  object-fit-cover" height="290">
+</div>
+<div class="container">
+  <app-lista-itens [itens]="itens" (addToCartEvent)="onAddToCart($event)"></app-lista-itens>
+  <div class="cart">
+    <div class="button-cart">
+      <button class="btn btn-primary custom-button" (click)="toggleCart()">Carrinho</button>
+    </div>
+    <app-carrinho *ngIf="showCarrinho" [listaDeItens]="itens" [showCarrinho]="showCarrinho" (closeCart)="closeCart()"></app-carrinho>
+  </div>
+</div>
+<footer>  
+  <div id="footer" class="container-fluid">
+    <img src="https://www.gov.br/cbpf/pt-br/Modelo%20de%20Capa/imagens/fundo-abstrato-azul-01_1150x500.jpg/@@images/image.jpeg" alt="logo" class="img-responsive imagem object-fit-cover" >
+    <h4 id="footerC"> Copyright &copy; 2024 </h4>
+  </div>
+</footer>
+
